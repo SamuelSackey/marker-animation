@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --marker-delay: 0.5s;
+  --marker-duration: 0.5s;
+}
+
+section {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.marker {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  --marker-color: #f0ff8c;
+}
+
+.marker:before {
+  box-sizing: content-box;
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(var(--marker-color), var(--marker-color));
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: 100%;
+  width: var(--marker-width, 0%);
+  opacity: var(--marker-opacity, 0);
+  height: 1em;
+  left: -0.1875em;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  border-radius: 40px;
+  padding-left: 0.1875em;
+  padding-right: 0.1875em;
+  transition: width var(--marker-duration) ease-out, opacity 0.2s ease;
+  transition-delay: var(--marker-delay);
+}
