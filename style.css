@@ -4,17 +4,39 @@
   box-sizing: border-box;
 }
 
+html {
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --marker-delay: 0.5s;
   --marker-duration: 0.5s;
 }
+.header {
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  background-color: var(--header-color, red);
+  top: 0;
+  left: 0;
+}
 
 section {
   min-height: 100vh;
+  padding-top: 70px;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+.blue {
+  --header-change: blue;
+}
+
+.red {
+  --header-change: red;
 }
 
 .marker {
